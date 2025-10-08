@@ -176,7 +176,7 @@
 import React, { useState } from "react";
 import loginBg from "../images/loginBg.png"; // Local background image
 
-export default function TravelLogin() {
+export default function Login() {
   const [activeTab, setActiveTab] = useState("user");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
