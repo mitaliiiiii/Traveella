@@ -2,10 +2,15 @@ import { Routes, Route } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
-//import Signup from "./pages/Signup";
-//import Login from "./pages/TravelLogin";
-import TravelSignUpPage from "./pages/TravelSignUpPage";
-import TravelLogin from "./pages/TravelLogin";
+
+
+import LandingPage from "./pages/LandingPage";
+import SignUp from "./pages/SignUp";
+import Login from "./pages/Login";
+import AfterLoggedInPage from "./pages/AfterLoggedInPage";
+
+
+
 
 function App() {
   const dispatch = useDispatch();
@@ -18,16 +23,26 @@ function App() {
  
       <Routes>
 
+
+        {/* Landing Page */}
+        
+        <Route path="/landingpage" element={<LandingPage />} />
+
+
         {/* Signup */}
-        <Route path="/" element={<TravelSignUpPage />} />
-        <Route path="/signup" element={<TravelSignUpPage />} />
+        <Route path="/" element={<SignUp />} />
+        <Route path="/signup" element={<SignUp />} />
+
 
         {/* Login */}
-         <Route path="/login" element={<TravelLogin />} />
-
-
+         <Route path="/login" element={<Login />} />
 
          
+        {/* after logged in page */}
+         <Route path="/afterloggedinpage" element={<AfterLoggedInPage />} /> 
+
+        
+
       </Routes>
     </div>
   );
