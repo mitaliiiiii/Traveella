@@ -25,21 +25,20 @@ function App() {
 
 
         {/* Landing Page */}
-        
+        <Route path="/" element={<LandingPage />} />
         <Route path="/landingpage" element={<LandingPage />} />
 
 
         {/* Signup */}
-        <Route path="/" element={<SignUp />} />
         <Route path="/signup" element={<SignUp />} />
 
 
         {/* Login */}
-         <Route path="/login" element={<Login />} />
+        <Route path="/login" element={<Login />} />
 
          
         {/* after logged in page */}
-         <Route path="/afterloggedinpage" element={<AfterLoggedInPage />} /> 
+        <Route path="/afterloggedinpage" element={<AfterLoggedInPage />} /> 
 
         
 

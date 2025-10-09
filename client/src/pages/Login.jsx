@@ -1,11 +1,17 @@
 import React, { useState } from "react";
 import loginBg from "../images/loginBg.png";
 import travel from "../images/traveellaSignup.png"
-export default function TravelLogin() {
+import { useNavigate } from 'react-router-dom';
+
+
+
+
+export default function Login() {
   const [activeTab, setActiveTab] = useState("user");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [remember, setRemember] = useState(false);
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -83,7 +89,7 @@ export default function TravelLogin() {
 </div>
         {/* Form */}
         <div className="flex justify-center">
-               <h1 className="text-gray-800 text-3xl font-medium -translate-y-[130px]">Sig in</h1>
+               <h1 className="text-gray-800 text-3xl font-medium -translate-y-[130px]">Sign in</h1>
         </div>
         <div className="flex justify-center">
         <form onSubmit={handleSubmit} className="space-y-4 w-[300px] -translate-y-[110px]">
@@ -125,12 +131,12 @@ export default function TravelLogin() {
             type="submit"
             className="w-full bg-black text-white py-3 rounded-xl font-semibold hover:bg-blue-700 transition-colors shadow-lg"
           >
-            Sig in
+            Sign in
           </button>
         </form>
          
 </div>
-   <div className="text-1xl text-gray-600 translate-x-[115px] -translate-y-[70px]">Dont't have an account?<button className="text-blue-500 underline">Sign Up</button> </div>
+   <div className="text-1xl text-gray-600 translate-x-[115px] -translate-y-[70px]">Dont't have an account?<button onClick={() => navigate('/signup')}  className="text-blue-500 underline">Sign Up</button> </div>
         {/* Footer */}
         <div className="text-center mt-6 text-xs text-gray-400 -translate-y-[50px]">
           <p>
