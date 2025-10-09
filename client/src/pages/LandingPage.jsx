@@ -1,16 +1,17 @@
 import React from "react";
-import traveella from "../images/traveellaSignup.png";
+import traveella from "../images/landingPageLogo.png";
 import chevron from "../images/chevron.png";
 import { useNavigate } from "react-router-dom";
 
 
 
-export default function App() {
+
+export default function LandingPage() {
 
   const navigate = useNavigate();
 
 
-  
+
   return (
     <div
       className="relative h-screen w-full bg-cover bg-center flex flex-col"
