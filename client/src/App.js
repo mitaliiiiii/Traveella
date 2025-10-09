@@ -13,7 +13,9 @@ function App() {
   const { user } = useSelector((state) => state.profile);
 
   return (
+
     <div className="w-screen min-h-screen bg-gray-100 flex items-center justify-center font-inter">
+ 
       <Routes>
 
         {/* Signup */}

@@ -268,18 +268,19 @@ const TravelSignUpPage = () => {
         <p style={styles.subHeading}>Join us today</p>
 
         {/* User/Admin Toggle */}
-        <div style={styles.toggleContainer}>
-          <button
+        <div style={styles.toggleContainer} >
+          <button className='rounded-l-full'
             onClick={() => setUserType('User')}
             style={{
               ...styles.toggleButton,
               backgroundColor: userType === 'User' ? '#000' : '#f1f1f1',
               color: userType === 'User' ? '#fff' : '#000',
+            
             }}
           >
             User
           </button>
-          <button
+          <button className=' rounded-r-full'
             onClick={() => setUserType('Admin')}
             style={{
               ...styles.toggleButton,
@@ -386,8 +387,9 @@ const styles = {
   toggleContainer: {
     display: 'flex',
     marginBottom: 24,
-    borderRadius: 4,
-    boxShadow: '0 0 0 1px #ccc',
+  
+   
+
   },
   toggleButton: {
     flex: 1,
