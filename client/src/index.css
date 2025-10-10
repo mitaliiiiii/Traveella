@@ -4,12 +4,9 @@
 
 
 
-html,
-body,
-#root {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  overflow: hidden; /* ye body ke scroll ko disable karega */
+html, body, #root {
+  height: auto;        /* 100% ki jagah auto */
+  min-height: 100%;    /* minimum height screen ke barabar */
+  overflow-x: hidden;  /* horizontal scroll remove */
+  overflow-y: auto;    /* vertical scroll allow */
 }

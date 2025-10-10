@@ -34,7 +34,7 @@ export default function LandingPage() {
         <div className="hidden md:flex space-x-8 text-sm font-medium">
           <button className="hover:text-gray-300">Home</button>
           <button className="hover:text-gray-300">Blog</button>
-          <button className="hover:text-gray-300">About Us</button>
+          <button onClick={() => navigate("/aboutus")} className="hover:text-gray-300">About Us</button>
         </div>
 
         {/* Auth buttons */}

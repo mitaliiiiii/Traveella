@@ -138,7 +138,7 @@ const SignUp = () => {
         </div>
 
         {/* Sign up with phone or email */}
-        <button
+        <button onClick={() => navigate('/signupwithemail')}
           style={{
             backgroundColor: '#000',
             border: 'none',

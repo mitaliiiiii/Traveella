@@ -1,28 +1,29 @@
-// server/controllers/Auth.js
+const bcrypt = require("bcrypt");
+const User = require("../models/User");
 
-exports.login = (req, res) => {
-  res.status(200).json({ success: true, message: "Dummy login success" })
-}
 
-exports.signup = (req, res) => {
-  res.status(200).json({ success: true, message: "Dummy signup success" })
-}
 
-exports.sendotp = (req, res) => {
-  res.status(200).json({ success: true, message: "Dummy OTP sent" })
-}
+exports.signup = async (req, res) => {
+  try {
+     console.log("Signup hit:", req.body);
+    const { name, email, password } = req.body;
 
-exports.changePassword = (req, res) => {
-  res.status(200).json({ success: true, message: "Dummy password changed" })
-}
+    if (!name || !email || !password) {
+      return res.status(400).json({ message: "All fields are required" });
+    }
 
-exports.resetPasswordToken = (req, res) => {
-  res.status(200).json({ success: true, message: "Dummy reset token" })
-}
+    const existingUser = await User.findOne({ email });
+    if (existingUser) {
+      return res.status(400).json({ message: "User already exists" });
+    }
 
-exports.resetPassword = (req, res) => {
-  res.status(200).json({ success: true, message: "Dummy password reset" })
-}
+    const hashedPassword = await bcrypt.hash(password, 10);
+    const newUser = new User({ name, email, password: hashedPassword });
+    await newUser.save();
 
-// Agar auth middleware chahiye to:
-exports.auth = (req, res, next) => next()
+    res.status(201).json({ message: "Signup successful!" });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ message: "Server error" });
+  }
+};
