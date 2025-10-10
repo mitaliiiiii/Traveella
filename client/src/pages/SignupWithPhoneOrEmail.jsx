@@ -5,7 +5,7 @@ import googleImg from '../images/googleImg.jpeg';
 import signupLogo from '../images/traveellaSignup.png';
 import axios from "axios";
 
-const SignupWithEmail = () => {
+const SignupWithPhoneOrEmail = () => {
   const [userType, setUserType] = useState('User');
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
@@ -157,4 +157,4 @@ const SignupWithEmail = () => {
   );
 };
 
-export default SignupWithEmail;
+export default SignupWithPhoneOrEmail;
