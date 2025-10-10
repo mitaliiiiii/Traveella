@@ -8,6 +8,7 @@ import LandingPage from "./pages/LandingPage";
 import SignUp from "./pages/SignUp";
 import Login from "./pages/Login";
 import AfterLoggedInPage from "./pages/AfterLoggedInPage";
+import SignupWithEmail from "./pages/SignupWithEmail";
 
 
 
@@ -39,6 +40,9 @@ function App() {
          
         {/* after logged in page */}
         <Route path="/afterloggedinpage" element={<AfterLoggedInPage />} /> 
+
+        {/* Signup with phone or email */}
+        <Route path="/signupwithemail" element={<SignupWithEmail />} />
 
         
 

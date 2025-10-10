@@ -9,6 +9,7 @@ import soloTravelImg from "../images/soloTravel.png";
 import coTravelImg from "../images/coTravel.png";
 import trekkingImg from "../images/trekking.png";
 import traveella from "../images/traveellaSignup.png";
+import { useNavigate } from "react-router-dom";
 
 
 const AfterLoggedInPage = () => {
@@ -107,6 +108,8 @@ const AfterLoggedInPage = () => {
 
    const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
+   const navigate = useNavigate();
+
   return (
     <div className="bg-background text-foreground overflow-y-auto">
       {/* Header */}
@@ -128,9 +131,9 @@ const AfterLoggedInPage = () => {
             Home
           </button>
           <button className="px-6 py-2 rounded-full hover:bg-primary-foreground/10 transition-colors font-medium">
-            Discovery
+            Blog
           </button>
-          <button className="px-6 py-2 rounded-full hover:bg-primary-foreground/10 transition-colors font-medium">
+          <button onClick={() => navigate("/aboutus")} className="px-6 py-2 rounded-full hover:bg-primary-foreground/10 transition-colors font-medium">
             About Us
           </button>
         </nav>

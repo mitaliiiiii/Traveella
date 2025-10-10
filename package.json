@@ -16,6 +16,8 @@
   },
   "dependencies": {
     "@craco/craco": "^7.1.0",
+    "axios": "^1.12.2",
+    "bcrypt": "^6.0.0",
     "lucide-react": "^0.545.0"
   }
 }
