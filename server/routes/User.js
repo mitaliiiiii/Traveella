@@ -1,11 +1,15 @@
 const express = require("express");
 const router = express.Router();
 const { signup } = require("../controllers/Auth");
+const { login } = require("../controllers/Auth");
 const passport = require("passport");
 
 
 // Signup route
 router.post("/signup", signup);
+
+// Login route
+router.post("/login", login);
 
 
 
