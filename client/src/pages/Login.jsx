@@ -9,16 +9,14 @@ export default function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [remember, setRemember] = useState(false);
-  const [message, setMessage] = useState(""); // added this
+  const [message, setMessage] = useState("");
   const navigate = useNavigate();
 
-  // ✅ handleSubmit async banaya (axios request yahi se jayegi)
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log("Login attempt:", { email: username, password });
 
     try {
-      // ✅ Corrected endpoint: hitting /login instead of /signup
       const res = await axios.post("http://localhost:4000/api/users/login", {
         email: username,
         password,
@@ -27,9 +25,7 @@ export default function Login() {
       console.log("Login Response:", res.data);
       setMessage(res.data.message || "Login successful!");
 
-      // redirect after 0.5 sec
       setTimeout(() => navigate("/afterloggedinpage"), 500);
-      
     } catch (err) {
       console.error("Login Error:", err.response?.data || err.message);
       setMessage(err.response?.data?.message || "Something went wrong");
@@ -136,9 +132,18 @@ export default function Login() {
               />
               Remember me
             </label>
-            <a href="#" className="text-gray-500 hover:underline">
+
+            {/* ✅ Fixed Forgot Password redirect */}
+            <button
+              type="button"
+              className="text-gray-500 hover:underline"
+              onClick={(e) => {
+                e.preventDefault();
+                navigate("/forgotpassword");
+              }}
+            >
               Forgot Password?
-            </a>
+            </button>
           </div>
 
           <button
