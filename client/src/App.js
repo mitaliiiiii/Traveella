@@ -8,7 +8,7 @@ import LandingPage from "./pages/LandingPage";
 import SignUp from "./pages/SignUp";
 import Login from "./pages/Login";
 import AfterLoggedInPage from "./pages/AfterLoggedInPage";
-
+import LandingPageOnScroll from "./pages/LandinPageOnScroll";
 
 
 
@@ -40,7 +40,7 @@ function App() {
         {/* after logged in page */}
         <Route path="/afterloggedinpage" element={<AfterLoggedInPage />} /> 
 
-        
+         <Route path="/LandingPageOnScroll" element={<LandingPageOnScroll />} /> 
 
       </Routes>
     </div>

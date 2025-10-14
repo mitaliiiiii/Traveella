@@ -20,8 +20,8 @@ const offerings = [
 
 export default function Offerings() {
   return (
-    <section className="max-w-6xl mx-auto mt-0 px-6 ">
-      <div className="flex justify-between items-center mb-6 translate-y-[40px]">
+    <section className="max-w-6xl mx-auto mt-6 px-6">
+      <div className="flex justify-between items-center mb-6">
         <h2 className="text-2xl font-bold">Our Offerings</h2>
         <button className="text-indigo-600 font-medium hover:underline">
           See all
