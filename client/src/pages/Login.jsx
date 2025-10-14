@@ -2,17 +2,34 @@ import React, { useState } from "react";
 import loginBg from "../images/loginBg.png";
 import travel from "../images/traveellaSignup.png";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 export default function Login() {
   const [activeTab, setActiveTab] = useState("user");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [remember, setRemember] = useState(false);
+  const [message, setMessage] = useState("");
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log({ activeTab, username, password, remember });
+    console.log("Login attempt:", { email: username, password });
+
+    try {
+      const res = await axios.post("http://localhost:4000/api/users/login", {
+        email: username,
+        password,
+      });
+
+      console.log("Login Response:", res.data);
+      setMessage(res.data.message || "Login successful!");
+
+      setTimeout(() => navigate("/afterloggedinpage"), 500);
+    } catch (err) {
+      console.error("Login Error:", err.response?.data || err.message);
+      setMessage(err.response?.data?.message || "Something went wrong");
+    }
   };
 
   return (
@@ -81,7 +98,7 @@ export default function Login() {
         >
           <div>
             <label className="block text-gray-800 text-sm sm:text-base mb-1">
-              Email or phone number
+              Email
             </label>
             <input
               type="text"
@@ -115,9 +132,18 @@ export default function Login() {
               />
               Remember me
             </label>
-            <a href="#" className="text-gray-500 hover:underline">
+
+            {/* ✅ Fixed Forgot Password redirect */}
+            <button
+              type="button"
+              className="text-gray-500 hover:underline"
+              onClick={(e) => {
+                e.preventDefault();
+                navigate("/forgotpassword");
+              }}
+            >
               Forgot Password?
-            </a>
+            </button>
           </div>
 
           <button
@@ -127,6 +153,11 @@ export default function Login() {
             Sign in
           </button>
         </form>
+
+        {/* message feedback */}
+        {message && (
+          <p className="mt-4 text-center text-sm text-gray-700">{message}</p>
+        )}
 
         {/* signup text */}
         <div className="text-sm sm:text-base text-gray-600 mt-5 text-center">

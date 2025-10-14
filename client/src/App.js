@@ -9,6 +9,7 @@ import SignUp from "./pages/SignUp";
 import Login from "./pages/Login";
 import AfterLoggedInPage from "./pages/AfterLoggedInPage";
 import SignupWithPhoneOrEmail from "./pages/SignupWithPhoneOrEmail";
+import LandingPageOnScroll from "./pages/LandingPageOnScroll";
 
 
 
@@ -41,8 +42,12 @@ function App() {
         {/* after logged in page */}
         <Route path="/afterloggedinpage" element={<AfterLoggedInPage />} /> 
 
+
         {/* Signup with phone or email */}
         <Route path="/signupwithphoneoremail" element={<SignupWithPhoneOrEmail />} />
+
+
+        <Route path="/LandingPageOnScroll" element={<LandingPageOnScroll />} /> 
 
         
 
