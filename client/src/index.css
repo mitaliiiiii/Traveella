@@ -9,4 +9,5 @@ html, body, #root {
   min-height: 100%;    /* minimum height screen ke barabar */
   overflow-x: hidden;  /* horizontal scroll remove */
   overflow-y: auto;    /* vertical scroll allow */
+     scroll-behavior: smooth;
 }
