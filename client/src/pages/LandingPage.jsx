@@ -205,8 +205,14 @@ export default function LandingPage() {
            lg:w-screen lg:h-[250px]
               xl:w-screen xl:h-[300px] " 
              />
+
+
              <CoTravel/>
-             <Footer/>
+
+             <div className='w-full mt-8'>
+                             <Footer />
+                         </div>
+             
         </div>
       </motion.div>
     </div>

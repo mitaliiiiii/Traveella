@@ -55,7 +55,7 @@ export default function Login() {
           />
         </div>
 
-        {/* tabs */}
+        {/* tabs
         <div className="flex justify-center w-full mb-6">
           <div className="flex bg-gray-100 rounded-full p-1 w-full max-w-xs shadow-inner">
             <button
@@ -79,7 +79,7 @@ export default function Login() {
               Admin
             </button>
           </div>
-        </div>
+        </div> */}
 
         {/* heading */}
         <h1 className="text-gray-900 text-xl sm:text-2xl md:text-3xl font-semibold mb-6 text-center">
