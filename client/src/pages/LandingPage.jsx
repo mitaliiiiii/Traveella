@@ -143,7 +143,7 @@ export default function LandingPage() {
        <NavbarBeforeloggedin/>
 
         {/* Content */}
-        <div className="pt-[120px] px-4 sm:px-6 lg:px-16 w-full max-w-7xl mx-auto">
+        <div className="pt-[120px] px-4 sm:px-6 lg:px-16 w-full max-w-8xl mx-auto">
           <HeroSection />
           <div className="mt-6 w-full max-w-4xl mx-auto">
             <SearchBar />
@@ -219,10 +219,12 @@ export default function LandingPage() {
                        className="w-full max-w-[1200px] h-auto object-cover rounded-xl shadow-lg"
                      />
                    </div>
-             
-             <Footer/>
+           
+           
         </div>
+          <div className="w-full"><Footer/></div>
       </motion.div>
+        
     </div>
   );
 }

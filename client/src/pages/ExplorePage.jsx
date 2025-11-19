@@ -15,7 +15,7 @@ const ExplorePage = () => {
       <NavbarBeforeloggedin />
       <PaymentHeader />
 
-      <SearchBar />
+      
 
       {/* Travelling Alone Section */}
       <TravellingAlone />

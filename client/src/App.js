@@ -17,7 +17,7 @@ import AboutUs from "./pages/AboutUs";
 import PaymentPage from "./pages/PaymentPage";
 import ExplorePage from "./pages/ExplorePage";
 import ExploreDetails from "./pages/ExploreDetails";
-
+import Card from "./pages/Card";
 function App() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -70,7 +70,7 @@ function App() {
 
         {/* Explore Detaoils Page */  }
         <Route path="/exploredetails" element={<ExploreDetails />} />
-
+ <Route path="/card" element={<Card />} />
 
         
         
